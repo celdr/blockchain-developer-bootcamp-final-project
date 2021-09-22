@@ -12,7 +12,7 @@ Separate the original NFT into smaller piece (user defined amount). The original
 * An owner of an NFT want to sell a portion of that NFT
 * The owner will send that NFT to an contract address with the specified number of piece they want to divide the NFT into
 * The smart contract will send back (using EIP-1155) the specific number of newly minted NFTs
-* Any user that hold all the separated NFTs may retreive the original NFT
+* Any user that holds all the portions of the original NFT, may retreive the original NFT by exchanging all the original pieces (which will be burned)
 
 ## **More Advanced**
 
