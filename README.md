@@ -1,4 +1,4 @@
-# **Frational NFTs**
+# **Fractional NFTs**
 ## **Problem**
 
 A holder of a NFT that has gained in value wants sell a portion of a NFT they hold.  Perhaps the value is so high, but they want to keep a portion of the NFT. 
