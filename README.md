@@ -1,32 +1,26 @@
-# **NFT Lockbox** 
+# **Frational NFTs**
 ## **Problem**
 
-Moving multiple NFT items from wallet to wallet can be time consuming as well as expensive if the network is busy.
+A holder of a NFT that has gained in value wants sell a portion of a NFT they hold.  Perhaps the value is so high, but they want to keep a portion of the NFT. 
 
 ## **Solution**
 
-A way to package multiple NFTs into a single NFT. Allow an interface to accept multiple NFTs and store in a contract address to hold the NFTs, and in return a sort of key is minted and returned to the user. The user can then send that key to another wallet and the packed NFTs can be extracted at another location.
-
-This could also be a solution for extra security by storing lockbox keys inside of other lockboxes (but would cost more in network fees).
+Separate the original NFT into smaller piece (user defined amount). The original NFT can be returned by any address that owns all of the original pieces.
 
 ## **How it Works**
 
-### **Basics**
-1. User connects to dapp
-2. dapp reads all ERC-721 available to pack and displays them to the user
-3. User selects all items to pack
-4. User selects the amount of keys they want to generate to be able to extract the selected NFT (minimum of 1)
-5. User confirms selection
-6. dapp generates a contract address that will store and mints key(s) to user or specified address
+* An owner of an NFT want to sell a portion of that NFT
+* The owner will send that NFT to an contract address with the specified number of piece they want to divide the NFT into
+* The smart contract will send back (using EIP-1155) the specific number of newly minted NFTs
+* Any user that hold all the separated NFTs may retreive the original NFT
 
-### **More Advanced** (future features)
+## **More Advanced**
 
-1. Allow multiple keys to be minted for extra security, where all the key must be held.
-2. User can enter specific address that will be able to extract the NFTs (any address with keys by default)
+* Allow divided items to be further divided
 
 ## **Challenges**
 
-* For sending a couple NFTs from one wallet to another, this may not be as cost effective as just directly transferring, but try to make it less time consuming.
+* Validate security of contract holding original NFTs
 
 ## **Final Project Checklist**
 
@@ -52,3 +46,4 @@ This could also be a solution for extra security by storing lockbox keys inside 
     - [ ] scripts/server
     - [ ] scripts/test
 - [ ] A screencast walking through the project
+
