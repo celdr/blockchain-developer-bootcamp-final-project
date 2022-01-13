@@ -48,9 +48,9 @@ contract("Fragmints", function ( accounts ) {
   it("total supply is not exceeded", async() => {
     const ssInstance = await Fragmints.deployed();
     // mint all available tokens
-    let totalSupply = await ssInstance.totalSupply();
+    let total= await ssInstance.totalSupply();
     let minted = await ssInstance.amountMinted();
-    for (let i = minted; i < totalSupply; i++) {
+    for (let i = minted; i < total; i++) {
       tokenCount++;
       await ssInstance.mintOriginal();
     }
@@ -67,8 +67,8 @@ contract("Fragmints", function ( accounts ) {
   */
   it("fragmenting token into 100 pieces", async() => {
     const ssInstance = await Fragmints.deployed();
-    tokenCount++
     await ssInstance.fragmint(1, 100);
+    tokenCount++
     let fragmintBalance = await ssInstance.balanceOf.call(accounts[0], tokenCount);
     assert.equal(fragmintBalance, 100, "Fragmints balance do not match expected");
     let originalBalance = await ssInstance.balanceOf.call(ssInstance.address, 1);
@@ -81,11 +81,12 @@ contract("Fragmints", function ( accounts ) {
   it("tranfer fragmints from one account to another", async() => {
     const ssInstance = await Fragmints.deployed();
     // get latest ID used in previous test
+    let balance = await ssInstance.balanceOf.call(accounts[0], tokenCount);
+    assert.equal(balance, 100, "Sender does not have the correct amount of pieces");
     await ssInstance.transfer(accounts[1], tokenCount, 100);
     let fragmintBalance = await ssInstance.balanceOf.call(accounts[1], tokenCount);
-    assert.equal(fragmintBalance, 100, "Fragminted pieces do not match expected");
+    assert.equal(fragmintBalance, 100, "Receiver does not have the correct amount of pieces");
   })
-
 
   /* 
   * further fragment a fragmint 
@@ -113,7 +114,12 @@ contract("Fragmints", function ( accounts ) {
     let doubleFragBalance = await ssInstance.balanceOf.call(accounts[1], tokenCount - 1);
     assert.equal(doubleFragBalance, 100, "Does not have the correct amount of tokens");
     // reform original
-    await ssInstance.reform(tokenCount - 1, { from: accounts[1] });
+    try {
+      await ssInstance.reform(tokenCount - 1, { from: accounts[1] });
+    } catch(e) {
+      console.log(e)
+    }
+    
     let fragmintBalance = await ssInstance.balanceOf.call(accounts[1], 1);
     assert.equal(fragmintBalance, 1, "Does not have the correct amount of tokens");
   })

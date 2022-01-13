@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Fragmints - Fractional NFTs</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<body>
+    <h1>Fragmints</h1>
+    <div id="mm-detected"></div>
+    <button id="mm-connect" style="float: right">Connect</button>    
+    
+    <h3><u>Mint</u></h3>
+    <button id="fm-mint-button">Mint</button>
+    <h3><u>Fragmint</u></h3>
+    <form action="" method="get" class="fm-fragmint">
+        <div class="fm-fragmint">
+            <label for="fm-fragmint-id">Token ID: </label>
+            <input type="number" id="fm-fragmint-id" required>
+        </div>
+        <div class="fm-fragmint">
+            <label for="fm-fragmint-amount">Amount: </label>
+            <input type="number" id="fm-fragmint-amount" required>
+        </div>
+        <div class="fm-fragmint">
+            <button type="button" id="fm-fragmint-button">Fragmint</button>
+        </div>
+    </form>
+    <h3><u>Reform</u></h3>
+    <form action="" method="get" class="fm-reform">
+        <div class="fm-reform">
+            <label for="fm-reform-id">Token ID: </label>
+            <input type="number" id="fm-reform-id" required>
+        </div>
+        <div class="fm-reform">
+            <button type="button" id="fm-reform-button">Reform</button>
+        </div>
+    </form>
+    <h3><u>Transfer</u></h3>
+    <form action="" method="get" class="fm-transfer">
+        <div class="fm-transfer">
+            <label for="fm-transfer-addr">To Address: </label>
+            <input type="text" id="fm-transfer-addr" required>
+        </div>
+        <div class="fm-transfer">
+            <label for="fm-transfer-id">Token ID: </label>
+            <input type="number" id="fm-transfer-id" required>
+        </div>
+        <div class="fm-transfer">
+            <label for="fm-transfer-amount">Amount: </label>
+            <input type="number" id="fm-transfer-amount" required>
+        </div>
+        <div class="fm-transfer">
+            <button type="button" id="fm-transfer-button">Transfer</button>
+        </div>
+    </form>
+    <h3><u>Stats</u></h3>
+    <label for="fm-mint-count">Minted: </label>
+    <div id="fm-mint-count"></div>
+    <label for="fm-mint-remaining">Remaining: </label>
+    <div id="fm-mint-remaining"></div>
+    <label for="fm-fragmint-count">Fragmints: </label>
+    <div id="fm-fragmint-count"></div>
+    
+    <script src="dapp.js"></script>
+</body>
+</html>
