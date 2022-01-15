@@ -52,13 +52,14 @@ Fragmints is a dapp that allows users to fractionalize NFTs into multiple pieces
 
 ### Steps
 
-1. git clone https://github.com/celdr/blockchain-developer-bootcamp-final-project.git
-2. cd blockchain-developer-bootcamp-final-project
-3. npm install
-4. truffle compile
-5. ganache-gli --port 8545 --networkId 5777
-6. truffle migrate --network development
+1. 'git clone https://github.com/celdr/blockchain-developer-bootcamp-final-project.git'
+2. 'cd blockchain-developer-bootcamp-final-project'
+3. 'npm install'
+4. 'truffle compile'
+5. 'ganache-cli --port 8545 --networkId 5777'
+6. 'truffle migrate --network development'
 7. Run index.html on localhost
+8. 'truffle test' in terminal to run 8 unit tests
 
 ## Future Plans
 
