@@ -863,6 +863,7 @@ mmEnable.onclick = async () => {
     // mmEnable.innerHTML = ethereum.selectedAddress.substring(0,5) + "..." + 
     //     ethereum.selectedAddress.substring(38)
 	// NOTE: could not get code above to work on first load, below while deprecated worked
+	console.log("could not get code above to work on first load, below while deprecated works")
 	const address = await window.ethereum.enable()
 	mmEnable.innerHTML = address
 
