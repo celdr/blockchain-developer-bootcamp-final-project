@@ -61,12 +61,14 @@ Fragmints is a dapp that allows users to fractionalize NFTs into multiple pieces
 
 ## Deployment
 
-dotenv is used to manage private info when deploying to public networks. Store your mnemonic phrase and Infura API URL, create a .env file containing the following:
+dotenv is used to manage private info when deploying to public networks. Store your mnemonic phrase and Infura API URL inside of a .env file containing the following:
 
 ```
 INFURA_URL=YOUR INFURA URL HERE
 MNEMONIC="YOUR MNEMONIC PHRASE HERE"
 ```
+
+Note the INFURA_URL does NOT use quotations while the MNEMONIC does.
 
 ## Future Plans
 
