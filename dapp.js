@@ -858,9 +858,14 @@ window.addEventListener('load', function() {
 // Connect to MetaMask
 const mmEnable = document.getElementById('mm-connect');
 mmEnable.onclick = async () => {
-    await ethereum.request({ method: 'eth_requestAccounts'})
-    mmEnable.innerHTML = ethereum.selectedAddress.substring(0,5) + "..." + 
-        ethereum.selectedAddress.substring(38)
+
+    // await ethereum.request({ method: 'eth_requestAccounts'})
+    // mmEnable.innerHTML = ethereum.selectedAddress.substring(0,5) + "..." + 
+    //     ethereum.selectedAddress.substring(38)
+	// NOTE: could not get code above to work on first load, below while deprecated worked
+	const address = await window.ethereum.enable()
+	mmEnable.innerHTML = address
+
 	// display number of minted tokens
 	let amountMinted = await fragmints.methods.amountMinted().call();
 	let mintCount = document.getElementById('fm-mint-count')
