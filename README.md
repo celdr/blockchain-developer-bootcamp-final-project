@@ -1,51 +1,72 @@
-# **Fractional NFTs**
+# Fragmints - Fractional NFTs
 
-Ethereum Account: 0xb7F5D226F43A9D126C50019C90A46Cf38518aad3
-## **Problem**
+## Project Description
 
-A holder of a NFT that has gained in value wants sell a portion of a NFT they hold.  Perhaps the value is so high, but they want to keep a portion of the NFT. 
+Fragmints is a dapp that allows users to fractionalize NFTs into multiple pieces. To retrieve the original token, a single address must hold all of the fragments. While current (1/13/2022) it only works with within this contract, the hope is in the future to allow any ERC-721 and ERC-1155 tokens.
 
-## **Solution**
+## How it Works
 
-Separate the original NFT into smaller piece (user defined amount). The original NFT can be returned by any address that holds all of the fragmented pieces.
+* A user mints a NFT by clicking the mint button
+* Once the user has minted one of the original token, the user can then select the desired token ID to fragment and the amount of pieces they want. Once the fields have been filled, the user can press 'Fragmint'. This sends transfer the token with the select ID to the contract and then mints tokens (amount determined by the user) to the user.
+* If the user holds all the fragmented tokens, the user can reform for the original token. This burns the users token and sends the original to the user.
+* The interface also allows the tokens (original and fragment tokens) to other users. 
 
-## **How it Works (Current)**
+## Screencast
 
-* A user mints a NFT
-* The owner will send that NFT to an contract address with the specified number of piece they want to divide the NFT into
-* The smart contract will send back (using EIP-1155) the specific number of newly minted NFTs
-* Any user that holds all the portions of the original NFT, may retreive the original NFT by exchanging all the original pieces (which will be burned)
+Coming Soon
 
-## **More Advanced (Future)**
+## Deployment
 
+<celdr.github.io/blockchain-developer-bootcamp-final-project/index.html>
+
+## Project Structure
+
+```
+.
+├── build/                          # Truffle Build 
+├── contracts/                      # Truffle Contracts 
+├── migrations/                     # Truffle Migrations 
+├── node_modules                    # OpenZeppelin Modules       
+├── test/fragmints.js               # Automated Tests 
+├── dapp.js                         # Front End
+├── index.css                       # Front End
+├── index.html                      # Front End
+├── truffle-config.js               # Truffle Configuration
+├── package-lock.json               
+├── package.json                    # Dependencies
+├── design_pattern_decisions.md     
+├── avoiding_common_attacks.md      
+├── deployed_address.txt
+└── README.md
+```
+
+## Run Locally
+
+### Prerequisites
+
+* Node.js: v14.17.6
+* npm: v6.14.15
+* truffle: v5.4.13
+* ganache-cli 
+
+### Steps
+
+1. git clone https://github.com/celdr/blockchain-developer-bootcamp-final-project.git
+2. cd blockchain-developer-bootcamp-final-project
+3. npm install
+4. truffle compile
+5. ganache-gli --port 8545 --networkId 5777
+6. truffle migrate --network development
+7. Run index.html on localhost
+
+## Future Plans
+
+* Update the frontend
 * Allow other contract tokens to be fragmented
 
-## **Challenges**
+## Certification Address
 
-* Handling of fragments being burned
+Ethereum Account: 0xb7F5D226F43A9D126C50019C90A46Cf38518aad3
 
-## **Final Project Checklist**
 
-- [x] Project naming format
-- [x] Contains README.md
-- [ ] Contains smart contract(s)
-    - [x] Are commented to specs
-    - [x] Use at least two design patterns from 'Smart Contracts" section
-    - [x] Inherit from at least one library or interface
-    - [x] Can be easily compiled, migrated and tested
-- [ ] Contains a Markdown file named design_pattern_decisions.md and avoiding_common_attacks.md
-- [x] Have at least five unit test for your smart contract(s) that pass
-- [ ] Contain a deployed_address.txt file
-- [ ] Have a frontend interface
-    - [ ] Detects the presence of MetaMask
-    - [ ] Connects to the current account
-    - [ ] Displays information from your smart contract
-    - [ ] Allows a user to submit a transaction to update smart contract state
-    - [ ] Updates the frontend if the transaction is successful or not
-- [ ] Hosted on Github Pages, Heroku, Netlify, Fleek or some other free frontend service
-- [ ] Have a folder named scripts that contain the following
-    - [ ] scripts/bootstrap
-    - [ ] scripts/server
-    - [ ] scripts/test
-- [ ] A screencast walking through the project
 
