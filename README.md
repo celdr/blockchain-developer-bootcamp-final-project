@@ -17,7 +17,7 @@ Coming Soon
 
 ## Deployment
 
-<celdr.github.io/blockchain-developer-bootcamp-final-project/index.html>
+<https://celdr.github.io/blockchain-developer-bootcamp-final-project/index.html>
 
 ## Project Structure
 
