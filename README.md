@@ -1,6 +1,6 @@
 # Fragmints - Fractional NFTs
 
-<https://celdr.github.io/blockchain-developer-bootcamp-final-project/index.html>
+Ropsten: <https://celdr.github.io/blockchain-developer-bootcamp-final-project/index.html>
 
 ## Project Description
 
