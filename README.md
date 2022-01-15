@@ -13,7 +13,8 @@ Fragmints is a dapp that allows users to fractionalize NFTs into multiple pieces
 
 ## Screencast
 
-Coming Soon
+2x Speed Recommended
+<https://www.loom.com/share/92f83451ff7842ab91ca148dbddfabf9>
 
 ## Deployment
 
