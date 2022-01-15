@@ -1,5 +1,7 @@
 # Fragmints - Fractional NFTs
 
+<https://celdr.github.io/blockchain-developer-bootcamp-final-project/index.html>
+
 ## Project Description
 
 Fragmints is a dapp that allows users to fractionalize NFTs into multiple pieces. To retrieve the original token, a single address must hold all of the fragments. While current (1/13/2022) it only works with within this contract, the hope is in the future to allow any ERC-721 and ERC-1155 tokens.
@@ -13,12 +15,8 @@ Fragmints is a dapp that allows users to fractionalize NFTs into multiple pieces
 
 ## Screencast
 
-2x Speed Recommended
+2x Speed Recommended  
 <https://www.loom.com/share/92f83451ff7842ab91ca148dbddfabf9>
-
-## Deployment
-
-<https://celdr.github.io/blockchain-developer-bootcamp-final-project/index.html>
 
 ## Project Structure
 
@@ -60,6 +58,15 @@ Fragmints is a dapp that allows users to fractionalize NFTs into multiple pieces
 6. 'truffle migrate --network development'
 7. Run index.html on localhost
 8. 'truffle test' in terminal to run 8 unit tests
+
+## Deployment
+
+dotenv is used to manage private info when deploying to public networks. Store your mnemonic phrase and Infura API URL, create a .env file containing the following:
+
+```
+INFURA_URL=YOUR INFURA URL HERE
+MNEMONIC="YOUR MNEMONIC PHRASE HERE"
+```
 
 ## Future Plans
 
